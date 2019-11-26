@@ -1,0 +1,17 @@
+{
+	"name":"Hulu Ad Blocker",
+	"version":"1.0",
+	"description":"Skip ad breaks in Hulu",
+	"manifest_version":2,
+	"permissions":["tabs"],
+	"background":{
+		"scripts":["background.js"]
+	},
+	"content_scripts":[
+		{
+			"run_at":"document_end",
+			"matches":["https://www.hulu.com/watch/*"],
+			"js":["jquery2.js","ad-blocker.js"]
+		}
+	]
+}
